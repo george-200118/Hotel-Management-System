@@ -1,0 +1,83 @@
+body{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: red;
+}
+.hero{
+background-color: yellow;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-image: url(images/vegas.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+opacity: 0.7;
+}
+.black{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    
+}
+.welcome{
+    position: absolute;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.needs-validation{
+    padding: 1.8rem;
+}
+
+.features{
+    padding: 2rem;
+}
+.gallery{
+    padding: 2rem;
+
+}
+.validate{
+    color: red;
+    font-size: 1rem;
+    position: relative;
+    left:50px
+}
+.customer{
+    background-image: url(images/customer.jpg);
+    height:100vh;
+    background-size: cover;
+}
+.room{
+    background-image: url(images/room.jpg);
+    height:100vh;
+    background-size: cover;
+}
+.reservation{
+    background-image: url(images/reservation.png);
+    height:100vh;
+    background-size: cover;
+}
+.white{
+    color:white;
+    font-weight: bold;
+}
