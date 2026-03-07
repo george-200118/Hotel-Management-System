@@ -1,0 +1,63 @@
+<div class="room">
+    <form [formGroup]="checkForm" (ngSubmit)="check(checkForm)">
+    <div class="form-row needs-validation">
+            <div class="col-sm-12">
+                <div class="col-md-3 mb-2">
+                <label class="white" for="validationCustom03" ><b>Name</b></label>
+                <input type="text" formControlName="Name" class="form-control" id="validationCustom03">
+                <div *ngIf="checkForm.controls['Name'].invalid && checkForm.controls['Name'].touched ">
+                    <p *ngIf="checkForm.controls['Name'].errors.required &&Is_Error " class="validate">Name Is Required</p>
+                  </div>
+                <p *ngIf="Name_Not_Found" class="validate">Name Does Not Have A Reservation</p>
+            </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+        </form>
+
+        <h1 class="title">Your Information</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr *ngFor="let res of get_name">
+                    <td><b>{{res.Name}}</b></td>
+                    <td><b>{{res.Phone}}</b></td>
+                    <td><b>{{res.Email}}</b></td>
+                    <td><b>{{res.Address}}</b></td>
+
+                </tr>
+            </tbody>
+        </table>
+    <h1 class="title">All Reservations</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Room Number</th>
+                <th scope="col">Check In</th>
+                <th scope="col">Check Out</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let res of get_reservation">
+                <td><b>{{res.Room_Number}}</b></td>
+                <td><b>{{res.Check_In}}</b></td>
+                <td><b>{{res.Check_Out}}</b></td>
+                <td><b>{{res.Status}}</b></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+<div class="room">
+  <form [formGroup]="checkForm" (ngSubmit)="check_room(checkForm)">
+    <div class="form-row needs-validation">
+      <div class="col-md-6 mb-3">
+        <label class="white" for="validationCustom03"><b>Check-In</b></label>
+        <input type="date" formControlName="Check_In" class="form-control" id="validationCustom03">
+        <div *ngIf="checkForm.controls['Check_In'].invalid && checkForm.controls['Check_In'].touched ">
+          <p *ngIf="checkForm.controls['Check_In'].errors.required &&Is_Error " class="validate">Check In Is Required</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="white" for="validationCustom04"><b>Check-Out</b></label>
+        <input type="date" formControlName="Check_Out" class="form-control" id="validationCustom04">
+        <div *ngIf="checkForm.controls['Check_Out'].invalid && checkForm.controls['Check_Out'].touched ">
+          <p *ngIf="checkForm.controls['Check_Out'].errors.required &&Is_Error " class="validate">Check Out Is Required</p>
+        </div>
+      </div>
+      <div class="col-md-12 mb-3">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <h1 class="title">All Rooms</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Room Number</th>
+        <th scope="col">Room Type</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let room of all_rooms">
+        <td><b>{{room.Room_Number}}</b></td>
+        <td><b>{{room.Room_Type}}</b></td>
+        <td><b>{{room.Price}}</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

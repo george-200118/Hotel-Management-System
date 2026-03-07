@@ -1,0 +1,54 @@
+<div class="customer">
+    <div class="needs-validation">
+        <div class="row">
+            <div class="move-center"></div>
+<div class="col-sm-6 ">
+    <h3 class="placing">Sign Up</h3>
+    <form   [formGroup]="contectForm" (ngSubmit)="save_customer(contectForm)" class="needs-validation" >
+        <div class="col-sm-12" >
+        <div class="form-row">
+            <div class="col-md-12 mb-2 " >
+                <label for="validationCustom01">Name</label>
+                <input type="text" formControlName="Name" class="form-control" id="validationCustom01"  >
+                <div *ngIf="contectForm.controls['Name'].invalid && contectForm.controls['Name'].touched &&Is_Error">
+                <p *ngIf="contectForm.controls['Name'].errors.required " class="validate">Name Is Required</p>
+                <p *ngIf="Name_Found" class="validate">Name Is Found</p>
+            </div>
+            </div>
+            <div class="col-md-12 mb-2">
+                <label for="validationCustom02">Phone</label>
+                <input type="text" formControlName="Phone" class="form-control" id="validationCustom02"  >
+                <div *ngIf="contectForm.controls['Phone'].invalid && contectForm.controls['Phone'].touched ">
+                <p *ngIf="contectForm.controls['Phone'].errors.required &&Is_Error " class="validate">Phone Is Required</p>
+                <p *ngIf="Phone_Found" class="validate">Phone Is Found</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12 mb-2 ">
+                <label for="validationCustom03">Address</label>
+                <input type="text" formControlName="Address" class="form-control" id="validationCustom03"  >
+                <div *ngIf="contectForm.controls['Address'].invalid && contectForm.controls['Address'].touched  ">
+                <p *ngIf="contectForm.controls['Address'].errors.required &&Is_Error  " class="validate">Address Is Required</p>
+                <p *ngIf="Address_Found" class="validate">Address Is Found</p>
+                </div>
+            </div>
+            <div class="col-md-12 mb-2 ">
+                <label for="validationCustom04">Email</label>
+                <input type="email" formControlName="Email" class="form-control" id="validationCustom04"  >
+                <div *ngIf="contectForm.controls['Email'].invalid && contectForm.controls['Email'].touched  ">
+                <p *ngIf="contectForm.controls['Email'].errors.required &&Is_Error  " class="validate">Email Is Required</p>
+                <p *ngIf="Email_Found" class="validate">Email Is Found</p>
+                </div>
+            </div>
+            <div class="col-md-12 mb-3 ">
+        <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+
+    </div>
+    </div>
+    </form>
+</div>  
+</div>
+</div>
+</div>

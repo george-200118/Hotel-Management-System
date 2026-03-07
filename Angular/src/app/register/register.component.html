@@ -1,0 +1,36 @@
+<div class="reservation">
+    <p class="title white">Register To Hotel</p>
+    <div class="needs-validation">
+        <div class="row">
+            <div class="move-center"></div>
+            <div class="col-sm-6 ">
+                <h3 class="placing white">Login</h3>
+                <form [formGroup]="loginForm" (ngSubmit)="register(loginForm)" class="needs-validation">
+                    <div class="login_inner">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="validationCustom01">Email</label>
+                                <input type="email" formControlName="Email" placeholder="Enter Your Email" class="form-control"id="validationCustom01">
+                                <div *ngIf="loginForm.controls['Email'].invalid && loginForm.controls['Email'].touched ">
+                                    <p *ngIf="loginForm.controls['Email'].errors.required &&Is_Error " class="validate">Name Is Required</p>
+                                </div>                              
+                                <p *ngIf="notFound" class="validate">Email Not Found SignUp First</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a routerLink="/sign-up" class="signup-click">Sign Up</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
